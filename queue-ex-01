@@ -1,0 +1,21 @@
+class ListQueue:
+    def __init__(self):
+        self.__queue = []
+
+    def enqueue(self, item):
+        self.__queue.insert(0, item)
+
+    def dequeue(self):
+        return self.__queue.pop()
+
+    def front(self):
+        if self.__queue.is_empty():
+            return None
+        else:
+            return self.__queue[len(self.__queue) - 1]
+
+    def is_empty(self) -> bool:
+        return not bool(self.__queue)
+
+    def dequeue_all(self):
+        self.__queue.clear()
